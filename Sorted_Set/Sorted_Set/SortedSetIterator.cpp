@@ -5,23 +5,23 @@ using namespace std;
 
 SortedSetIterator::SortedSetIterator(const SortedSet& m) : multime(m)
 {
-	//BC:?(1)     WC:?(1)    Overall:O(1)
-	//TODO - Implementation
+	//BC:0(1)     WC:0(1)    Overall:O(1)
+	
 	this->current = 0;
 
 }
 
 
 void SortedSetIterator::first() {
-	//BC:?(1)     WC:Tita(1)    Overall:O(1)
-	//TODO - Implementation
+	//BC:0(1)     WC:0(1)    Overall:O(1)
+
 	this->current = 0;
 }
 
 
 void SortedSetIterator::next() {
-	//BC:?(1)     WC:?(1)    Overall:O(1)
-	//TODO - Implementation
+	//BC:0(1)     WC:0(1)    Overall:O(1)
+	
 	if (!valid()) {
 		throw exception();
 	}
@@ -33,8 +33,8 @@ void SortedSetIterator::next() {
 
 TElem SortedSetIterator::getCurrent()
 {
-	//BC:?(1)     WC:?(1)    Overall:O(1)
-	//TODO - Implementation
+	//BC:0(1)     WC:0(1)    Overall:O(1)
+
 	if (!valid()) {
 		throw exception();
 	}
@@ -44,7 +44,7 @@ TElem SortedSetIterator::getCurrent()
 }
 
 bool SortedSetIterator::valid() const {
-	//BC:?(1)     WC:?(1)    Overall:O(1)
+	//BC:0(1)     WC:0(1)    Overall:O(1)
 	//TODO - Implementation
 	return  (this->current < this->multime.n);
 }

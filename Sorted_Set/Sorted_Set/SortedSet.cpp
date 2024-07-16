@@ -22,7 +22,7 @@ void SortedSet::resize() {
 
 SortedSet::SortedSet(Relation r) {
 	//BC:0(1)     WC:0(1)    Overall:O(1)
-	//TODO - Implementation
+	
 	
 	//initialize the capacity
 	this->cp = 1;
@@ -40,7 +40,7 @@ SortedSet::SortedSet(Relation r) {
 
 bool SortedSet::add(TComp elem) {
 	//BC:0(1)     WC:0(n^2)    Overall:O(n^2)
-	//TODO - Implementation
+	
 	if (search(elem))
 		return false;
 	if (n == cp)
@@ -74,7 +74,7 @@ bool SortedSet::add(TComp elem) {
 
 
 bool SortedSet::remove(TComp elem) {
-	//TODO - Implementation
+	
 	//BC:0(1)     WC:0(n)    Overall:O(n)
 	bool found = false;
 	int i = 0;
@@ -91,8 +91,7 @@ bool SortedSet::remove(TComp elem) {
 }
 
 
-bool SortedSet::search(TComp elem) const {
-	//TODO - Implementation
+
 	//BC:0(1)     WC:0(n)    Overall:O(n)
 	for (int i = 0; i < n && (rel(this->e[i],elem) || this->e[i] == elem); i++)
 		if (this->e[i] == elem)
@@ -105,7 +104,7 @@ bool SortedSet::search(TComp elem) const {
 
 
 int SortedSet::size() const {
-	//TODO - Implementation
+	
 	//BC:0(1)     WC:0(1)    Overall:O(1)
 	return this->n;
 }
@@ -113,7 +112,7 @@ int SortedSet::size() const {
 
 
 bool SortedSet::isEmpty() const {
-	//TODO - Implementation
+	
 	//BC:0(1)     WC:0(1)    Overall:O(1)
 	return (n==0);
 }
@@ -125,7 +124,7 @@ SortedSetIterator SortedSet::iterator() const {
 
 
 SortedSet::~SortedSet() {
-	//TODO - Implementation
+	
 	//BC:0(1)     WC:0(1)    Overall:O(1)
 	delete[] e;
 }

@@ -2,7 +2,7 @@
 #include "SortedSetIterator.h"
 
 void SortedSet::resize() {
-	//BC:?(1)     WC:?(n)    Overall:O(n)
+	//BC:0(1)     WC:0(n)    Overall:O(n)
 	// allocate a new array with double capacity somewhere in the computer's memory
 	TElem* eNew = new int[2 * cp];
 
@@ -21,7 +21,7 @@ void SortedSet::resize() {
 }
 
 SortedSet::SortedSet(Relation r) {
-	//BC:?(1)     WC:?(1)    Overall:O(1)
+	//BC:0(1)     WC:0(1)    Overall:O(1)
 	//TODO - Implementation
 	
 	//initialize the capacity
@@ -39,7 +39,7 @@ SortedSet::SortedSet(Relation r) {
 
 
 bool SortedSet::add(TComp elem) {
-	//BC:?(1)     WC:?(n^2)    Overall:O(n^2)
+	//BC:0(1)     WC:0(n^2)    Overall:O(n^2)
 	//TODO - Implementation
 	if (search(elem))
 		return false;
@@ -75,7 +75,7 @@ bool SortedSet::add(TComp elem) {
 
 bool SortedSet::remove(TComp elem) {
 	//TODO - Implementation
-	//BC:?(1)     WC:?(n)    Overall:O(n)
+	//BC:0(1)     WC:0(n)    Overall:O(n)
 	bool found = false;
 	int i = 0;
 	while (i < this->n && !found) {
@@ -93,7 +93,7 @@ bool SortedSet::remove(TComp elem) {
 
 bool SortedSet::search(TComp elem) const {
 	//TODO - Implementation
-	//BC:?(1)     WC:?(n)    Overall:O(n)
+	//BC:0(1)     WC:0(n)    Overall:O(n)
 	for (int i = 0; i < n && (rel(this->e[i],elem) || this->e[i] == elem); i++)
 		if (this->e[i] == elem)
 			return true;
@@ -106,7 +106,7 @@ bool SortedSet::search(TComp elem) const {
 
 int SortedSet::size() const {
 	//TODO - Implementation
-	//BC:?(1)     WC:?(1)    Overall:O(1)
+	//BC:0(1)     WC:0(1)    Overall:O(1)
 	return this->n;
 }
 
@@ -114,19 +114,19 @@ int SortedSet::size() const {
 
 bool SortedSet::isEmpty() const {
 	//TODO - Implementation
-	//BC:?(1)     WC:?(1)    Overall:O(1)
+	//BC:0(1)     WC:0(1)    Overall:O(1)
 	return (n==0);
 }
 
 SortedSetIterator SortedSet::iterator() const {
-	//BC:?(1)     WC:?(1)    Overall:O(1)
+	//BC:0(1)     WC:0(1)    Overall:O(1)
 	return SortedSetIterator(*this);
 }
 
 
 SortedSet::~SortedSet() {
 	//TODO - Implementation
-	//BC:?(1)     WC:?(1)    Overall:O(1)
+	//BC:0(1)     WC:0(1)    Overall:O(1)
 	delete[] e;
 }
 

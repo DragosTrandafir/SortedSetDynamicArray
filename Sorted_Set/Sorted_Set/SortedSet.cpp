@@ -92,8 +92,10 @@ bool SortedSet::remove(TComp elem) {
 
 
 
+bool SortedSet::search(TElem elem) const
+{
 	//BC:0(1)     WC:0(n)    Overall:O(n)
-	for (int i = 0; i < n && (rel(this->e[i],elem) || this->e[i] == elem); i++)
+	for (int i = 0; i < n && (rel(this->e[i], elem) || this->e[i] == elem); i++)
 		if (this->e[i] == elem)
 			return true;
 	return false;
